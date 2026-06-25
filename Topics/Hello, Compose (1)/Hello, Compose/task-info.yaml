@@ -1,0 +1,10 @@
+type: theory
+custom_name: "Hello, Compose!"
+files:
+  - name: src/Main.kt
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/24825#comment
+status: Solved
+record: -1
+post_submission_on_open: true

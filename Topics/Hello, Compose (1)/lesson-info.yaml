@@ -1,0 +1,5 @@
+custom_name: "Hello, Compose!"
+content:
+  - "Hello, Compose"
+  - Fix preview
+  - Fix composables

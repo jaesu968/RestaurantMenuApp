@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="false" />
+        <option name="distributionType" value="WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleJvm" value="corretto-23" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/Restaurant Menu App/task" />
+            <option value="$PROJECT_DIR$/Restaurant Menu App/task (1)" />
+            <option value="$PROJECT_DIR$/Topics/Extension functions/Extension functions" />
+            <option value="$PROJECT_DIR$/Topics/Extension functions/Last digit" />
+            <option value="$PROJECT_DIR$/Topics/Hello, Compose (1)/Fix composables" />
+            <option value="$PROJECT_DIR$/Topics/Hello, Compose (1)/Fix preview" />
+            <option value="$PROJECT_DIR$/Topics/Hello, Compose (1)/Hello, Compose" />
+            <option value="$PROJECT_DIR$/Topics/Image colors/Generate ARGB value" />
+            <option value="$PROJECT_DIR$/Topics/Image colors/Image colors" />
+            <option value="$PROJECT_DIR$/Topics/Image colors/Print color" />
+            <option value="$PROJECT_DIR$/Topics/Regexps/Backslash problem" />
+            <option value="$PROJECT_DIR$/Topics/Regexps/Can you" />
+            <option value="$PROJECT_DIR$/Topics/Regexps/Different colo(u)rs" />
+            <option value="$PROJECT_DIR$/Topics/Regexps/Escapism" />
+            <option value="$PROJECT_DIR$/Topics/Regexps/Help the teacher" />
+            <option value="$PROJECT_DIR$/Topics/Regexps/Regexps" />
+            <option value="$PROJECT_DIR$/Topics/Regexps/Rings of Power" />
+            <option value="$PROJECT_DIR$/Topics/Writing files/Closed case" />
+            <option value="$PROJECT_DIR$/Topics/Writing files/Duplication" />
+            <option value="$PROJECT_DIR$/Topics/Writing files/Writing files" />
+            <option value="$PROJECT_DIR$/util" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+    <option name="parallelModelFetch" value="true" />
+  </component>
+</project>

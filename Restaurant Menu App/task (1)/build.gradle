@@ -1,0 +1,65 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+
+android {
+    namespace "org.hyperskill.ordersmenu"
+    compileSdk hs.android.compileSdkVersion
+
+    defaultConfig {
+        applicationId "org.hyperskill.ordersmenu"
+        minSdkVersion hs.android.minSdkVersion
+        targetSdkVersion hs.android.targetSdkVersion
+        versionCode 1
+        versionName '1.0'
+
+        vectorDrawables {
+            useSupportLibrary true
+        }
+    }
+
+    buildFeatures {
+        compose true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion '1.5.10'
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    kotlinOptions {
+        jvmTarget = '11'
+    }
+
+    sourceSets {
+        test {
+            java.srcDirs = ['test/java']
+        }
+    }
+
+    packagingOptions {
+        resources {
+            excludes += '/META-INF/{AL2.0,LGPL2.1}'
+        }
+    }
+}
+
+dependencies {
+    def coreKtx = hs.android.lib.coreKtx
+    implementation "androidx.core:core-ktx:$coreKtx"
+
+    def appCompat = hs.android.lib.appCompat
+    implementation "androidx.appcompat:appcompat:$appCompat"
+
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.5.1'
+    implementation 'androidx.activity:activity-compose:1.6.1'
+    implementation 'androidx.compose.material:material:1.3.1'
+
+    def composeUi = "1.3.3"
+    implementation "androidx.compose.ui:ui:$composeUi"
+    implementation "androidx.compose.ui:ui-tooling-preview:$composeUi"
+    debugImplementation "androidx.compose.ui:ui-tooling:$composeUi"
+    debugImplementation "androidx.compose.ui:ui-test-manifest:$composeUi"
+}

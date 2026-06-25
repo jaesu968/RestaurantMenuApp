@@ -1,0 +1,63 @@
+type: edu
+custom_name: Make the order
+files:
+  - name: src/main/java/org/hyperskill/ordersmenu/theme/Color.kt
+    visible: true
+    learner_created: false
+  - name: src/main/java/org/hyperskill/ordersmenu/theme/Shape.kt
+    visible: true
+    learner_created: false
+  - name: src/main/java/org/hyperskill/ordersmenu/theme/Theme.kt
+    visible: true
+    learner_created: false
+  - name: src/main/java/org/hyperskill/ordersmenu/theme/Type.kt
+    visible: true
+    learner_created: false
+  - name: src/main/java/org/hyperskill/ordersmenu/MainActivity.kt
+    visible: true
+    learner_created: false
+  - name: src/main/res/drawable/ic_launcher_background.xml
+    visible: true
+    learner_created: false
+  - name: src/main/res/drawable-v24/ic_launcher_foreground.xml
+    visible: true
+    learner_created: false
+  - name: src/main/res/mipmap-anydpi-v26/ic_launcher.xml
+    visible: true
+    learner_created: false
+  - name: src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml
+    visible: true
+    learner_created: false
+  - name: src/main/res/values/strings.xml
+    visible: true
+    learner_created: false
+  - name: src/main/AndroidManifest.xml
+    visible: true
+    learner_created: false
+  - name: build.gradle
+    visible: true
+    learner_created: false
+  - name: test/java/org/hyperskill/ordersmenu/internals/AbstractUnitTest.kt
+    visible: true
+    learner_created: false
+  - name: test/java/org/hyperskill/ordersmenu/internals/OrdersMenuUnitTest.kt
+    visible: true
+    learner_created: false
+  - name: test/java/org/hyperskill/ordersmenu/Stage1UnitTest.kt
+    visible: true
+    learner_created: false
+  - name: test/java/org/hyperskill/ordersmenu/Stage2UnitTest.kt
+    visible: true
+    learner_created: false
+  - name: test/java/org/hyperskill/ordersmenu/Stage3UnitTest.kt
+    visible: true
+    learner_created: false
+  - name: test/java/org/hyperskill/ordersmenu/Stage4UnitTest.kt
+    visible: true
+    learner_created: false
+  - name: test/java/org/hyperskill/ordersmenu/Stage5UnitTest.kt
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/projects/568/stages/3244/implement#comment
+status: Unchecked
+record: -1

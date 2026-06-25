@@ -1,0 +1,10 @@
+type: code
+custom_name: Can you.. ?
+files:
+  - name: src/Main.kt
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/20605#comment
+status: Solved
+record: -1
+submission_language: kotlin
