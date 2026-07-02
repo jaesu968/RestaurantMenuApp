@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.hyperskill.ordersmenu.Stage1UnitTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-06-25T14:56:20" hostname="dhcp-10-101-164-173.wireless.northwestern.private" time="2.425">
+<testsuite name="org.hyperskill.ordersmenu.Stage1UnitTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-06-30T21:49:21" hostname="Mac.cable.rcn.com" time="3.3">
   <properties/>
-  <testcase name="checkTitle" classname="org.hyperskill.ordersmenu.Stage1UnitTest" time="2.425"/>
+  <testcase name="checkTitle" classname="org.hyperskill.ordersmenu.Stage1UnitTest" time="3.3"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

@@ -34,17 +34,17 @@ files:
     visible: true
     learner_created: false
   - name: test/java/org/hyperskill/ordersmenu/internals/AbstractUnitTest.kt
+    visible: true
     learner_created: false
   - name: test/java/org/hyperskill/ordersmenu/internals/OrdersMenuUnitTest.kt
+    visible: true
     learner_created: false
   - name: test/java/org/hyperskill/ordersmenu/Stage1UnitTest.kt
+    visible: true
     learner_created: false
   - name: build.gradle
     visible: true
     learner_created: false
 feedback_link: https://hyperskill.org/projects/568/stages/3240/implement#comment
 status: Solved
-feedback:
-  message: Congratulations!
-  time: "Thu, 25 Jun 2026 14:56:23 UTC"
 record: -1

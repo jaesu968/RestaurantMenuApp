@@ -1,7 +1,7 @@
 type: framework
 content:
   - The title
-  - Main menu with features (1)
-  - Choose the quantity to order (1)
+  - Main menu with features
+  - Choose the quantity to order
   - Add more recipes (1)
   - Make the order (1)

@@ -3,14 +3,14 @@ hyperskill_project:
   ide_files: https://hyperskill.org/api/projects/568/additional-files/additional_files.json
   is_template_based: false
   use_ide: true
-update_date: "Wed, 24 Jun 2026 19:02:31 UTC"
+update_date: "Thu, 02 Jul 2026 15:49:35 UTC"
 stages:
   - id: 3240
     step: 53504
     is_completed: true
   - id: 3241
     step: 53505
-    is_completed: false
+    is_completed: true
   - id: 3242
     step: 53506
     is_completed: false
@@ -219,12 +219,6 @@ topics:
       theory_id: 7884
     - title: Introduction to Interfaces
       theory_id: 18222
-    - title: Single Responsibility Principle
-      theory_id: 8963
-    - title: Object declarations
-      theory_id: 10698
-    - title: Companion object
-      theory_id: 10707
     - title: Regexps
       theory_id: 10721
     - title: "Sets, ranges, and alternations"
@@ -235,6 +229,12 @@ topics:
       theory_id: 14540
     - title: Regexps in use
       theory_id: 14633
+    - title: Single Responsibility Principle
+      theory_id: 8963
+    - title: Object declarations
+      theory_id: 10698
+    - title: Companion object
+      theory_id: 10707
     - title: TextField Composable
       theory_id: 25634
     - title: "Column, Row and Box"
@@ -247,10 +247,10 @@ topics:
       theory_id: 7619
     - title: Creational design patterns
       theory_id: 16251
-    - title: Singleton
-      theory_id: 16469
     - title: Regular expression
       theory_id: 7580
+    - title: Singleton
+      theory_id: 16469
   2:
     - title: Recomposition
       theory_id: 28325

@@ -3,8 +3,7 @@ apply plugin: 'kotlin-android'
 
 android {
     namespace "org.hyperskill.ordersmenu"
-    compileSdk hs.android.compileSdkVersion
-
+    compileSdkVersion hs.android.compileSdkVersion
     defaultConfig {
         applicationId "org.hyperskill.ordersmenu"
         minSdkVersion hs.android.minSdkVersion
