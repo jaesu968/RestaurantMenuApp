@@ -13,7 +13,7 @@ The goal of this first stage was to set up the project and display a simple titl
 
 ## Stage 2: Main Menu with Features
 
-In this stage, we expanded the UI to include the main menu header and the first menu item.
+For this stage, we expanded the UI to include the main menu header and the first menu item.
 
 ### Objectives
 - Center the title `"Orders Menu"` horizontally.
@@ -33,7 +33,7 @@ Modifiers allow you to decorate or augment composables. We used `Modifier.fillMa
 
 ### Code Snippets
 
-#### MainActivity.kt
+#### MainActivity.kt (Stage 2)
 
 ```kotlin
 @Composable
@@ -46,29 +46,71 @@ fun ShowTitle(title: String) {
         Text(text = title, fontSize = 48.sp)
     }
 }
-
-@Composable
-fun MenuItem() {
-    Text(text = "Fettuccine", fontSize = 24.sp)
-}
 ```
 
-## Stage 3: Choose the Quantity (Planned)
+## Stage 3: Choose the Quantity
 
-The next step is to add interactivity by allowing users to select the quantity for each menu item.
+For this stage, we added interactivity to the menu by allowing users to select the quantity for each item.
 
 ### Objectives
 - Add `+` and `-` buttons next to the menu item.
 - Display the current quantity (starting at `0`).
-- Implement a maximum limit (e.g., 5 items in stock).
+- Implement a maximum limit of 5 items in stock.
 - Change the menu item text color to **Red** when the maximum limit is reached.
 - Prevent the quantity from going below `0`.
+
+### Key Concepts
+
+#### 1. State Management
+- **`remember`**: Stores a value in the Composition. It helps retain state across the recompositions.
+- **`mutableStateOf`**: A state holder that Compose observes. When its value changes, Compose automatically triggers a recomposition of the functions that read it.
+
+#### 2. Clickable Modifier
+- **`Modifier.clickable`**: Used to make a composable responsive to user input.
+
+### Code Snippets
+
+#### MainActivity.kt (Updated MenuItem)
+
+```kotlin
+@Composable
+fun MenuItem() {
+    var amountOrdered by remember { mutableStateOf(0) }
+    val amountStock = 5
+    val nameColor = if (amountOrdered == amountStock) Color.Red else Color.Black
+
+    Row(
+        modifier = Modifier.fillMaxWidth(),
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.spacedBy(16.dp)
+    ) {
+        Text(text = "Fettuccine", fontSize = 24.sp, color = nameColor)
+        Text(
+            text = "-",
+            fontSize = 24.sp,
+            modifier = Modifier.clickable { if (amountOrdered > 0) amountOrdered-- }
+        )
+        Text(text = "$amountOrdered", fontSize = 24.sp)
+        Text(
+            text = "+",
+            fontSize = 24.sp,
+            modifier = Modifier.clickable { if (amountOrdered < amountStock) amountOrdered++ }
+        )
+    }
+}
+```
+
+## Stage 4: Add More Recipes (Planned)
+
+The next step is to expand the menu by adding more items and managing their states collectively.
 
 ### Verification
 To verify the implementation:
 1. Run the application in an emulator or on a physical device.
-2. Ensure the text "Orders Menu" is centered and "Fettuccine" is visible.
-3. Run the unit tests:
+2. Test the `+` and `-` buttons for "Fettuccine".
+3. Confirm that the quantity does not go below 0 or above 5.
+4. Verify that the item name "Fettuccine" turns red when the quantity reaches 5.
+5. Run the unit tests:
     - `Stage1UnitTest.kt`
     - `Stage2UnitTest.kt`
-    - `Stage3UnitTest.kt` (once implemented)
+    - `Stage3UnitTest.kt`

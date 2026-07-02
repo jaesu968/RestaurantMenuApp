@@ -8,12 +8,6 @@ programming_language: Kotlin
 content:
   - Restaurant Menu App
   - Topics
-additional_files:
-  - name: settings.gradle
-    visible: true
-  - name: build.gradle
-    visible: true
-  - name: gradle.properties
-    visible: true
+additional_files: [ ]
 mode: Study
 yaml_version: 5

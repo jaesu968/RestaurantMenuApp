@@ -1,11 +1,17 @@
 package org.hyperskill.ordersmenu
 
+import androidx.compose.ui.graphics.Color
 import android.os.Bundle
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.setValue
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Row
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material.MaterialTheme
@@ -59,5 +65,50 @@ fun DefaultPreview() {
 
 @Composable
 fun MenuItem() {
-    Text(text = "Fettuccine", fontSize = 24.sp)
+    // State management for the amount ordered quantity
+    var amountOrdered by remember { mutableStateOf(0) } // default value is 0
+    val amountStock = 5  // default stock limit is 5
+
+    // Color logic: Red if stock limit is reached, otherwise Black
+    val nameColor = if (amountOrdered == amountStock) Color.Red else Color.Black
+
+    Row(
+        modifier = Modifier.fillMaxWidth(),
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.spacedBy(16.dp)
+    ) {
+        // Menu item name
+        Text(
+            text = "Fettuccine",
+            fontSize = 24.sp,
+            color = nameColor
+        )
+        // Decrease button "-"
+        Text(
+            text = "-",
+            fontSize = 24.sp,
+            modifier = Modifier.clickable {
+                if (amountOrdered > 0) {
+                    amountOrdered--
+                }
+            }
+        )
+        // Current quantity display
+        Text(
+            text = "$amountOrdered",
+            fontSize = 24.sp
+        )
+        // Increase button "+"
+        Text(
+            text = "+",
+            fontSize = 24.sp,
+            modifier = Modifier.clickable {
+                if (amountOrdered < amountStock) {
+                    amountOrdered++
+                }
+            }
+        )
+    }
+
+
 }
