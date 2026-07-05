@@ -100,17 +100,67 @@ fun MenuItem() {
 }
 ```
 
-## Stage 4: Add More Recipes (Planned)
+## Stage 4: Add More Recipes
 
-The next step is to expand the menu by adding more items and managing their states collectively.
+For this stage, we expanded the menu by adding multiple recipes with different stock limits and made the `MenuItem` component reusable.
+
+### Objectives
+- Create a list or map of multiple recipes (e.g., Fettuccine, Risotto, Gnocchi, Spaghetti, Lasagna, Steak Parmigiana).
+- Assign different stock limits for each recipe.
+- Refactor the `MenuItem` composable to accept `name` and `amountStock` as parameters.
+- Dynamically display all menu items on the screen.
+
+### Key Concepts
+
+#### 1. Reusable Composables
+By passing parameters to a `@Composable` function, we can reuse the same UI structure for different data, reducing code duplication.
+
+#### 2. Iterating in Compose
+We can use standard Kotlin collection functions like `forEach` inside a layout composable to generate multiple child components dynamically.
+
+### Code Snippets
+
+#### MainActivity.kt (Refactored MenuItem)
+
+```kotlin
+@Composable
+fun MenuItem(name: String, amountStock: Int) {
+    var amountOrdered by remember { mutableStateOf(0) }
+    val nameColor = if (amountOrdered == amountStock) Color.Red else Color.Black
+
+    Row(
+        modifier = Modifier.fillMaxWidth(),
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.spacedBy(16.dp)
+    ) {
+        Text(text = name, fontSize = 24.sp, color = nameColor)
+        Text(
+            text = "-",
+            fontSize = 24.sp,
+            modifier = Modifier.clickable { if (amountOrdered > 0) amountOrdered-- }
+        )
+        Text(text = "$amountOrdered", fontSize = 24.sp)
+        Text(
+            text = "+",
+            fontSize = 24.sp,
+            modifier = Modifier.clickable { if (amountOrdered < amountStock) amountOrdered++ }
+        )
+    }
+}
+```
+
+## Stage 5: Make the Order (Planned)
+
+The next step is to add a "Make Order" button that allows users to finalize their selection and see a summary of their order.
 
 ### Verification
 To verify the implementation:
 1. Run the application in an emulator or on a physical device.
-2. Test the `+` and `-` buttons for "Fettuccine".
-3. Confirm that the quantity does not go below 0 or above 5.
-4. Verify that the item name "Fettuccine" turns red when the quantity reaches 5.
+2. Confirm that all menu items (Fettuccine, Risotto, etc.) are displayed.
+3. Test the `+` and `-` buttons for different items and ensure they respect their individual stock limits.
+4. Verify that the item names turn red when their respective maximum limit is reached.
 5. Run the unit tests:
     - `Stage1UnitTest.kt`
     - `Stage2UnitTest.kt`
     - `Stage3UnitTest.kt`
+    - `Stage4UnitTest.kt`

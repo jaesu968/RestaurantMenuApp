@@ -1,5 +1,4 @@
 type: edu
-custom_name: Add more recipes
 files:
   - name: src/main/java/org/hyperskill/ordersmenu/theme/Color.kt
     visible: true
@@ -38,23 +37,20 @@ files:
     visible: true
     learner_created: false
   - name: test/java/org/hyperskill/ordersmenu/internals/AbstractUnitTest.kt
-    visible: true
     learner_created: false
   - name: test/java/org/hyperskill/ordersmenu/internals/OrdersMenuUnitTest.kt
-    visible: true
     learner_created: false
   - name: test/java/org/hyperskill/ordersmenu/Stage1UnitTest.kt
-    visible: true
     learner_created: false
   - name: test/java/org/hyperskill/ordersmenu/Stage2UnitTest.kt
-    visible: true
     learner_created: false
   - name: test/java/org/hyperskill/ordersmenu/Stage3UnitTest.kt
-    visible: true
     learner_created: false
   - name: test/java/org/hyperskill/ordersmenu/Stage4UnitTest.kt
-    visible: true
     learner_created: false
 feedback_link: https://hyperskill.org/projects/568/stages/3243/implement#comment
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: "Sun, 05 Jul 2026 21:28:16 UTC"
 record: -1

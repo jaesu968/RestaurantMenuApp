@@ -28,6 +28,17 @@ import org.hyperskill.ordersmenu.theme.PlayOrdersMenuTheme
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // variable to hold all menu items
+        val recipesNameToStockAmount = mapOf(
+            "Fettuccine" to 5,
+            "Risotto" to 6,
+            "Gnocchi" to 4,
+            "Spaghetti" to 3,
+            "Lasagna" to 5,
+            "Steak Parmigiana" to 2
+        )
+
         setContent {
             PlayOrdersMenuTheme {
                 Surface(
@@ -36,7 +47,10 @@ class MainActivity : ComponentActivity() {
                 ) {
                     Column(modifier = Modifier.fillMaxSize(), verticalArrangement = Arrangement.spacedBy(20.dp)) {
                         ShowTitle("Orders Menu")
-                        MenuItem()
+                        // Create one MenuItem for each recipe in the map
+                        recipesNameToStockAmount.forEach { (name, stock) ->
+                            MenuItem(name = name, amountStock = stock)
+                        }
                     }
                 }
             }
@@ -55,19 +69,30 @@ fun ShowTitle(title: String){
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
+    // variable to hold all menu items
+    val recipesNameToStockAmount = mapOf(
+        "Fettuccine" to 5,
+        "Risotto" to 6,
+        "Gnocchi" to 4,
+        "Spaghetti" to 3,
+        "Lasagna" to 5,
+        "Steak Parmigiana" to 2
+    )
+
     PlayOrdersMenuTheme {
         Column(modifier = Modifier.fillMaxSize(), verticalArrangement = Arrangement.spacedBy(20.dp)) {
             ShowTitle("Orders Menu")
-            MenuItem()
+            recipesNameToStockAmount.forEach { (name, stock) ->
+                MenuItem(name = name, amountStock = stock)
+            }
         }
     }
 }
 
 @Composable
-fun MenuItem() {
+fun MenuItem(name: String, amountStock: Int) {
     // State management for the amount ordered quantity
     var amountOrdered by remember { mutableStateOf(0) } // default value is 0
-    val amountStock = 5  // default stock limit is 5
 
     // Color logic: Red if stock limit is reached, otherwise Black
     val nameColor = if (amountOrdered == amountStock) Color.Red else Color.Black
@@ -79,7 +104,7 @@ fun MenuItem() {
     ) {
         // Menu item name
         Text(
-            text = "Fettuccine",
+            text = name,
             fontSize = 24.sp,
             color = nameColor
         )
@@ -109,6 +134,7 @@ fun MenuItem() {
             }
         )
     }
+
 
 
 }
