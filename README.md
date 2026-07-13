@@ -13,7 +13,7 @@ The goal of this first stage was to set up the project and display a simple titl
 
 ## Stage 2: Main Menu with Features
 
-For this stage, we expanded the UI to include the main menu header and the first menu item.
+For this stage, I expanded the UI to include the main menu header and the first menu item.
 
 ### Objectives
 - Center the title `"Orders Menu"` horizontally.
@@ -29,7 +29,7 @@ For this stage, we expanded the UI to include the main menu header and the first
 - **`Row`**: A layout composable that places its children in a horizontal sequence.
 
 #### 2. Modifiers
-Modifiers allow you to decorate or augment composables. We used `Modifier.fillMaxSize()`, `Modifier.fillMaxWidth()`, and `Arrangement` to control positioning.
+Modifiers allow you to decorate or augment composables. I used `Modifier.fillMaxSize()`, `Modifier.fillMaxWidth()`, and `Arrangement` to control positioning.
 
 ### Code Snippets
 
@@ -50,7 +50,7 @@ fun ShowTitle(title: String) {
 
 ## Stage 3: Choose the Quantity
 
-For this stage, we added interactivity to the menu by allowing users to select the quantity for each item.
+For this stage, I added interactivity to the menu by allowing users to select the quantity for each item.
 
 ### Objectives
 - Add `+` and `-` buttons next to the menu item.
@@ -102,7 +102,7 @@ fun MenuItem() {
 
 ## Stage 4: Add More Recipes
 
-For this stage, we expanded the menu by adding multiple recipes with different stock limits and made the `MenuItem` component reusable.
+For this stage, I expanded the menu by adding multiple recipes with different stock limits and made the `MenuItem` component reusable.
 
 ### Objectives
 - Create a list or map of multiple recipes (e.g., Fettuccine, Risotto, Gnocchi, Spaghetti, Lasagna, Steak Parmigiana).
@@ -113,10 +113,10 @@ For this stage, we expanded the menu by adding multiple recipes with different s
 ### Key Concepts
 
 #### 1. Reusable Composables
-By passing parameters to a `@Composable` function, we can reuse the same UI structure for different data, reducing code duplication.
+By passing parameters to a `@Composable` function, I can reuse the same UI structure for different data, reducing code duplication.
 
 #### 2. Iterating in Compose
-We can use standard Kotlin collection functions like `forEach` inside a layout composable to generate multiple child components dynamically.
+I can use standard Kotlin collection functions like `forEach` inside a layout composable to generate multiple child components dynamically.
 
 ### Code Snippets
 
@@ -151,7 +151,7 @@ fun MenuItem(name: String, amountStock: Int) {
 
 ## Stage 5: Make the Order
 
-For this stage, we added a "Make Order" button that finalizes the selection, shows an order summary in a `Toast`, and decreases the stock of each ordered item.
+For this stage, I added a "Make Order" button that finalizes the selection, shows an order summary in a `Toast`, and decreases the stock of each ordered item.
 
 ### Objectives
 - Add a `Button` labeled `"Make Order"` (black background, white text, `24sp`) below the menu items.
