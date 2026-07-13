@@ -37,16 +37,22 @@ files:
     visible: true
     learner_created: false
   - name: test/java/org/hyperskill/ordersmenu/internals/AbstractUnitTest.kt
+    visible: true
     learner_created: false
   - name: test/java/org/hyperskill/ordersmenu/internals/OrdersMenuUnitTest.kt
+    visible: true
     learner_created: false
   - name: test/java/org/hyperskill/ordersmenu/Stage1UnitTest.kt
+    visible: true
     learner_created: false
   - name: test/java/org/hyperskill/ordersmenu/Stage2UnitTest.kt
+    visible: true
     learner_created: false
   - name: test/java/org/hyperskill/ordersmenu/Stage3UnitTest.kt
+    visible: true
     learner_created: false
   - name: test/java/org/hyperskill/ordersmenu/Stage4UnitTest.kt
+    visible: true
     learner_created: false
 feedback_link: https://hyperskill.org/projects/568/stages/3243/implement#comment
 status: Solved

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.hyperskill.ordersmenu.Stage4UnitTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-07-05T21:28:14" hostname="Mac.cable.rcn.com" time="0.623">
+<testsuite name="org.hyperskill.ordersmenu.Stage4UnitTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-07-13T22:03:20" hostname="Mac.cable.rcn.com" time="0.67">
   <properties/>
-  <testcase name="test00_checkMenuItemAmountIncreases" classname="org.hyperskill.ordersmenu.Stage4UnitTest" time="0.078"/>
-  <testcase name="test01_checkMenuItemAmountIncreasesUpToLimitOnly" classname="org.hyperskill.ordersmenu.Stage4UnitTest" time="0.135"/>
-  <testcase name="test02_checkMenuItemWhenOnMaxLimitColorIsRed" classname="org.hyperskill.ordersmenu.Stage4UnitTest" time="0.076"/>
-  <testcase name="test03_checkMenuItemAmountDecrease" classname="org.hyperskill.ordersmenu.Stage4UnitTest" time="0.107"/>
-  <testcase name="test04_checkAmountDecreaseDoesNotGoBellowZero" classname="org.hyperskill.ordersmenu.Stage4UnitTest" time="0.156"/>
-  <testcase name="test05_whileColorIsRedCheckColorChangesBackToBlackAfterDecrement" classname="org.hyperskill.ordersmenu.Stage4UnitTest" time="0.071"/>
+  <testcase name="test00_checkMenuItemAmountIncreases" classname="org.hyperskill.ordersmenu.Stage4UnitTest" time="0.076"/>
+  <testcase name="test01_checkMenuItemAmountIncreasesUpToLimitOnly" classname="org.hyperskill.ordersmenu.Stage4UnitTest" time="0.149"/>
+  <testcase name="test02_checkMenuItemWhenOnMaxLimitColorIsRed" classname="org.hyperskill.ordersmenu.Stage4UnitTest" time="0.08"/>
+  <testcase name="test03_checkMenuItemAmountDecrease" classname="org.hyperskill.ordersmenu.Stage4UnitTest" time="0.124"/>
+  <testcase name="test04_checkAmountDecreaseDoesNotGoBellowZero" classname="org.hyperskill.ordersmenu.Stage4UnitTest" time="0.168"/>
+  <testcase name="test05_whileColorIsRedCheckColorChangesBackToBlackAfterDecrement" classname="org.hyperskill.ordersmenu.Stage4UnitTest" time="0.073"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

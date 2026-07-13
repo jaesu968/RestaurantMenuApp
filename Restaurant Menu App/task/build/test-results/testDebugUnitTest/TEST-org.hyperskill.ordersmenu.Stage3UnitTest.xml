@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.hyperskill.ordersmenu.Stage3UnitTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-07-05T21:28:14" hostname="Mac.cable.rcn.com" time="0.432">
+<testsuite name="org.hyperskill.ordersmenu.Stage3UnitTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-07-13T22:03:19" hostname="Mac.cable.rcn.com" time="0.469">
   <properties/>
-  <testcase name="test00_checkFettuccineAmountIncreases" classname="org.hyperskill.ordersmenu.Stage3UnitTest" time="0.096"/>
-  <testcase name="test01_checkFettuccineAmountIncreasesUpToLimitOnly" classname="org.hyperskill.ordersmenu.Stage3UnitTest" time="0.084"/>
-  <testcase name="test02_checkFettuccineWhenOnMaxLimitColorIsRed" classname="org.hyperskill.ordersmenu.Stage3UnitTest" time="0.059"/>
-  <testcase name="test03_checkAmountDecrease" classname="org.hyperskill.ordersmenu.Stage3UnitTest" time="0.062"/>
-  <testcase name="test04_checkAmountDecreaseDoesNotGoBellowZero" classname="org.hyperskill.ordersmenu.Stage3UnitTest" time="0.08"/>
+  <testcase name="test00_checkFettuccineAmountIncreases" classname="org.hyperskill.ordersmenu.Stage3UnitTest" time="0.094"/>
+  <testcase name="test01_checkFettuccineAmountIncreasesUpToLimitOnly" classname="org.hyperskill.ordersmenu.Stage3UnitTest" time="0.093"/>
+  <testcase name="test02_checkFettuccineWhenOnMaxLimitColorIsRed" classname="org.hyperskill.ordersmenu.Stage3UnitTest" time="0.065"/>
+  <testcase name="test03_checkAmountDecrease" classname="org.hyperskill.ordersmenu.Stage3UnitTest" time="0.067"/>
+  <testcase name="test04_checkAmountDecreaseDoesNotGoBellowZero" classname="org.hyperskill.ordersmenu.Stage3UnitTest" time="0.098"/>
   <testcase name="test05_whileColorIsRedCheckColorChangesBackToBlackAfterDecrement" classname="org.hyperskill.ordersmenu.Stage3UnitTest" time="0.051"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>

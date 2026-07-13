@@ -149,9 +149,100 @@ fun MenuItem(name: String, amountStock: Int) {
 }
 ```
 
-## Stage 5: Make the Order (Planned)
+## Stage 5: Make the Order
 
-The next step is to add a "Make Order" button that allows users to finalize their selection and see a summary of their order.
+For this stage, we added a "Make Order" button that finalizes the selection, shows an order summary in a `Toast`, and decreases the stock of each ordered item.
+
+### Objectives
+- Add a `Button` labeled `"Make Order"` (black background, white text, `24sp`) below the menu items.
+- On click, build a summary message listing every ordered item in menu order:
+  `Ordered:` followed by `==> <name>: <amount>` lines.
+- Show the summary using a `Toast`.
+- Decrease each item's stock by the amount ordered, then reset the order quantity back to `0`.
+- Do nothing if no items were selected.
+- Once an item's stock reaches `0`, it can no longer be ordered (name shows red at the limit).
+
+### Key Concepts
+
+#### 1. State Hoisting
+In earlier stages, each `MenuItem` owned its own `amountOrdered` state. That doesn't work anymore because the "Make Order" button needs to read *all* quantities and update *all* stocks. The state was **hoisted** up to `MainActivity`, and `MenuItem` became a stateless component that receives values and reports changes through a callback:
+
+```kotlin
+@Composable
+fun MenuItem(
+    name: String,
+    amountStock: Int,
+    amountOrdered: Int,
+    onUpdateOrder: (Int) -> Unit
+)
+```
+
+#### 2. `mutableStateMapOf`
+An observable map from Compose. Changing any entry (e.g., `recipesStock["Lasagna"] = 4`) automatically triggers recomposition of the composables reading it. Two maps hold the shared state:
+
+```kotlin
+val recipesStock = remember {
+    mutableStateMapOf(
+        "Fettuccine" to 5, "Risotto" to 6, "Gnocchi" to 4,
+        "Spaghetti" to 3, "Lasagna" to 5, "Steak Parmigiana" to 2
+    )
+}
+val recipesOrder = remember {
+    mutableStateMapOf(
+        "Fettuccine" to 0, "Risotto" to 0, "Gnocchi" to 0,
+        "Spaghetti" to 0, "Lasagna" to 0, "Steak Parmigiana" to 0
+    )
+}
+```
+
+Note: state maps don't guarantee insertion order, so a separate `menuItems` list preserves the fixed display/order iteration order.
+
+#### 3. Unidirectional Data Flow
+State flows **down** (maps → `MenuItem` parameters) and events flow **up** (`onUpdateOrder`, `onOrderPlaced` callbacks). The `Toast` is triggered via a callback so the composable itself stays free of Android context concerns:
+
+```kotlin
+MakeOrderButton(
+    menuItems = menuItems,
+    recipesOrder = recipesOrder,
+    recipesStock = recipesStock,
+    onOrderPlaced = { msg ->
+        Toast.makeText(this@MainActivity, msg, Toast.LENGTH_LONG).show()
+    }
+)
+```
+
+#### 4. Building the Order Summary
+Standard Kotlin collection operations (`map` + `filter`) select only the ordered items, then a `StringBuilder` assembles the required message format:
+
+```kotlin
+Button(
+    onClick = {
+        val orderedItems = menuItems
+            .map { name -> name to (recipesOrder[name] ?: 0) }
+            .filter { (_, amount) -> amount > 0 }
+        if (orderedItems.isNotEmpty()) {
+            val message = StringBuilder("Ordered:")
+            orderedItems.forEach { (name, amount) ->
+                message.append("\n==> $name: $amount")
+                recipesStock[name] = (recipesStock[name] ?: 0) - amount  // update stock
+                recipesOrder[name] = 0                                   // reset order
+            }
+            onOrderPlaced(message.toString())                            // show toast
+        }
+    },
+    colors = ButtonDefaults.buttonColors(
+        backgroundColor = Color.Black,
+        contentColor = Color.White
+    )
+) {
+    Text(text = "Make Order", fontSize = 24.sp)
+}
+```
+
+### Key Ideas
+- **Single source of truth**: quantities and stock live in one place (`MainActivity`), so the button and every menu item always agree.
+- **Stock as dynamic state**: stock is no longer a constant — after each order it shrinks, and the existing red-at-limit logic (`amountOrdered == amountStock`) naturally handles sold-out items (`0 == 0` is red immediately).
+- **Deterministic ordering**: iterating over a fixed `menuItems` list (not the map) keeps the toast message and UI order consistent.
 
 ### Verification
 To verify the implementation:
@@ -159,8 +250,11 @@ To verify the implementation:
 2. Confirm that all menu items (Fettuccine, Risotto, etc.) are displayed.
 3. Test the `+` and `-` buttons for different items and ensure they respect their individual stock limits.
 4. Verify that the item names turn red when their respective maximum limit is reached.
-5. Run the unit tests:
+5. Select quantities and press "Make Order" — a toast should list the ordered items and the stock should decrease accordingly.
+6. Order an item until stock hits `0` and confirm it can no longer be ordered.
+7. Run the unit tests:
     - `Stage1UnitTest.kt`
     - `Stage2UnitTest.kt`
     - `Stage3UnitTest.kt`
     - `Stage4UnitTest.kt`
+    - `Stage5UnitTest.kt`
